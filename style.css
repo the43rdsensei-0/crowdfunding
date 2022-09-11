@@ -1,0 +1,746 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Commissioner',-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: #f8f8f8;
+    padding-bottom: 3em;
+    position: relative;
+}
+
+/* ===============
+    LAYOUT
+================ */
+
+
+header {
+    height: 350px;
+    background: url(/images/image-hero-desktop.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-container {
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    justify-content: space-between;
+}
+
+nav li {
+    text-decoration: none;
+    margin-left: 2em;
+}
+
+.link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:focus {
+    color: hsl(176, 50%, 47%);
+    transition: .3s ease-in-out;
+}
+
+.hamburger {
+    display: none;
+}
+
+.hamburger a{
+    color: #fff;
+}
+
+/* .hamburger a:hover{
+    color: hsl(176, 50%, 47%);
+} */
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: -90px;
+}
+
+.section-container {
+    border: 1px solid rgb(235, 233, 233);
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 2em;
+}
+
+.sectionA {
+    text-align: center;
+    padding: .5em;
+}
+
+.m-logo {
+    margin-top: -30px;
+}
+
+.sectionA-btn {
+    margin: 3em 3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bookmark {
+    display: flex;
+    align-items: center;
+    background: #f8f8f8;
+    border-radius: 50px;
+    padding-right: .5em;
+    cursor: pointer;
+}
+
+.bookmark img {
+    width: 40px;
+}
+
+.bookmark-btn {
+    border: none;
+    background: transparent;
+    color: hsl(0, 0%, 48%);
+    font-weight: 700;
+    font-size: .8rem;
+    padding: 1em;
+    cursor: pointer;
+}
+
+.btn-active {
+    padding: 1em 2em;
+    border-radius: 50px;
+    border: none;
+    background: hsl(176, 50%, 47%);
+    color: #fff;
+    font-weight: 700;
+    font-size: .8rem;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.btn-active:hover,
+.btn-active:focus {
+    background: hsl(176, 72%, 28%);
+}
+
+.btn-inactive {
+    background: #cccccc;
+}
+
+.btn-inactive:hover,
+.btn-inactive:focus {
+    background: #cccccc;
+}
+
+.sectionB {
+    padding: 2em 3em;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 3em 2em;
+    margin: 2em 0;
+}
+
+.card-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.counter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal {
+    position: absolute;
+    overflow-y: scroll;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 1em;
+    background: rgba(0, 0, 0, .5);
+    display: none;
+}
+
+.modal-inner {
+    background: #fff;
+    width: 100%;
+    max-width: 51%;
+    border-radius: 10px;
+    padding: 1.5em 2em;
+    box-sizing: border-box;
+    position: absolute;
+    top: 130px;
+}
+
+.close {
+    margin: 0;
+    display: flex;
+    justify-content: right;
+    margin-bottom: .2em;
+    cursor: pointer;
+    color: hsl(0, 0%, 48%);
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+}
+
+.modal-title h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.modal-card {
+    border: 1px solid #ccc;
+    padding: 0.5em 2.5em;
+    border-radius: 10px;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+.modal-card:hover, 
+.modal-card:focus {
+    border: 1px soild hsl(176, 50%, 47%);
+}
+
+.modal-card-top-flex{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.modal-card-top-flex .counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    box-sizing: border-box;
+}
+
+.modal-card-top {
+    display: flex;
+}
+
+.modal-card-top input {
+    margin-right: 1em;
+    width: 18px;
+}
+
+.modal-card-text {
+    margin-bottom: 2em;
+}
+
+.p2 {
+    border: none;
+}
+
+.pledge-amt {
+    display: flex;
+    border-top: 1px solid rgb(133, 131, 131);
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 0;
+    margin: 1em 0;
+    display: none;
+}
+
+.pledge-amt input {
+    color: #000;
+    font-weight: 700;
+    cursor: text;
+    outline: none;
+    width: 45px;
+    border: none;
+}
+
+
+.pledge-amt p {
+    margin: 0;
+}
+
+.pledge-wrapper {
+    height: 100%;
+    display: flex;
+}
+
+.pledge-wrapper p {
+    display: inline;
+    z-index: 2;
+    margin: 0;
+}
+
+.pledge-input {
+    padding: 0 1em;
+    border-radius: 50px;
+    border: 1px solid rgb(133, 131, 131);
+    margin-right: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.fa-dollar-sign {
+    color: rgb(133, 131, 131);
+    margin-right: 3px;
+}
+
+.completed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, .5);
+    display: none;
+}
+
+.completed-inner {
+    position: absolute;
+    top: 35vh;
+    background: #fff;
+    max-width: 35%;
+    width: 100%;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2.5em 3em;
+}
+
+.completed-inner button {
+    margin-top: 1em;
+}
+
+.glow {
+    border: 1px solid hsl(176, 50%, 47%);
+}
+
+.nav-close-btn {
+    visibility: hidden;
+}
+
+
+
+
+/* ====================
+TYPOGRAPHY
+===================== */
+
+
+
+h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    margin-top: 1em;
+}
+
+p {
+    font-size: .8rem;
+    color: hsl(0, 0%, 48%);
+    margin: .8em 0;
+    line-height: 2em;
+}
+
+h2 {
+    font-size: 1.1rem;
+}
+
+h3 {
+    font-size: .9rem;
+}
+
+.sectionB h2 {
+    margin-bottom: 2em;
+}
+
+.card-flex h1,
+.card-flex h3,
+.card-flex button,
+.card-flex p {
+    margin: 0;
+}
+
+.pledge {
+    color: hsl(176, 50%, 47%);
+}
+
+.counter h1 {
+    margin-right: .2em;
+}
+.modal-card-top {
+    margin-top: 1em;
+}
+
+.modal-card-top h3 {
+    font-size: .8rem;
+}
+
+.modal-card-text {
+    line-height: 2em;
+    margin-top: 0;
+}
+
+.modal-card-top-flex .counter h1 {
+    font-size: 2rem;
+    margin: 0;
+    margin-right: .2em;
+}
+
+.modal-card-top-flex .counter p {
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1em;
+}
+
+.modal-link {
+    color: #000;
+}
+
+.nr {
+    margin-top: .5em;
+}
+
+/* ====================
+    RESPONSIVENESS
+===================== */
+
+
+
+
+@media (max-width: 768px) {
+    header {
+        background: url(/images/image-hero-mobile.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    .hamburger {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+    .nav-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        box-sizing: border-box;
+        background: rgba(0, 0, 0, .5);
+    }
+    
+    .nav-menu {
+        position: absolute;
+        width: 100%;
+        flex-direction: column;
+        width: 85%;
+        background: #fff;
+        border-radius: 10px;
+        padding: 0;
+    }
+
+    .nav-item {
+        margin: 0;
+        padding: 1.7em 0;
+        align-items: center;
+        border-top: 1px solid #cccccc;
+        padding-left: 2em;
+    }
+
+    .nav-item:nth-child(1) {
+        border-top: transparent;
+    }
+
+    .nav-item:nth-child(2) {
+        border-top: transparent;
+    }
+
+    .nav-close {
+        z-index: 10;
+        position: absolute;
+        top: -50px;
+        right: 0;
+    }
+
+    .nav-close-btn {
+        color: #ccc;
+        visibility: visible;
+    }
+
+    .nav-close-btn:hover {
+        color: hsl(176, 50%, 47%);
+    }
+
+    .link {
+        color: black;
+    }
+
+    .nav-menu.active {
+        left: 50px;
+        transition: 0.5s ease;
+    }
+
+    .container {
+        width: 85%;
+    }
+
+    .sectionA {
+        padding: 0 2em;
+    }
+
+    .sectionA-btn {
+        width: 100%;
+        margin: 2em auto;
+    }
+
+    .bookmark-btn {
+        display: none;
+    }
+
+    .btn-active {
+        padding: 1.4em 2.5em;
+    }
+
+    .bookmark {
+        background: transparent;
+    }
+
+    .bookmark img {
+        width: 51px;
+    }
+
+    .card {
+        text-align: left;
+    }
+
+    .card-flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .modal {
+        position: absolute;
+        box-sizing: border-box;
+        padding: 4em 0;
+        overflow-y: scroll;
+        height: 100%;
+    }
+
+    .modal-inner {
+        max-width: 85%;
+        position: absolute;
+        top: 130px;
+    }
+
+    .modal-title {
+        margin-bottom: 2em;
+    }
+
+    .counter {
+        margin-bottom: 1em;
+        height: 50px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .modal-card {
+        position: relative;
+        padding-bottom: 2.5em;
+        margin-bottom: 2em;
+    }
+
+    .close {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .counter-x {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        bottom: 0;
+        left: 32px;
+        height: 50px;
+    }
+
+    .col-dir {
+        display: block;
+        margin-top: 1em;
+    }
+
+    .col-dir h3 {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    .p2 {
+        margin-left: 0;
+        margin-top: .5em;
+    }
+
+    .modal-card-text {
+        margin: 2.5em 0;
+        line-height: 2em;
+    }
+
+    .modal-link h3{
+        margin-bottom: .4em;
+    }
+
+    .no-pledge {
+        padding-bottom: 0;
+    }
+
+    p {
+        font-size: 1rem;
+        color: hsl(0, 0%, 48%);
+        margin: .8em 0;
+        line-height: 2em;
+    }
+
+    .modal h3 {
+        font-size: 1.2rem;
+    }
+
+    .pledge-amt {
+        display: flex;
+        border-top: 1px solid rgb(133, 131, 131);
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 1em 0;
+        margin: 1.5em 0;
+        display: none;
+        margin-top: 3.2em;
+    }
+
+    .pledge-wrapper {
+        margin-top: 1em;
+    }
+    
+    .pledge-input {
+        padding: .4em 1em;
+        border-radius: 50px;
+        border: 1px solid rgb(133, 131, 131);
+        margin-right: 1em;
+        display: flex;
+        align-items: center;
+    }
+
+    .pledge-btn {
+        padding: .4em 1em;
+    }
+
+    .completed-inner {
+        max-width: 85%;
+        margin: 0;
+        top: 30%;
+        padding: 1.5em 2em;
+    }
+
+    .active {
+        display: none;
+    }
+}
+
+
+
+.hide {
+    display: flex;
+}
+
+.expand {
+    display: flex;
+}
+
+.open-success {
+    display: flex;
+}
+
+@media (max-width:375px) {
+    .sectionB {
+        padding: 2em 1.5em;
+    }
+    .card {
+        padding: 2em 1em;
+    }
+
+    .sectionA-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bookmark {
+        display: none;
+    }
+
+    .modal-inner {
+        padding: 1.5em;
+    }
+
+    .modal-card {
+        padding: .5em 1.5em;
+        padding-bottom: 2.5em;
+    }
+
+    .close {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .counter-x {
+        left: 12px;
+        height: 50px;
+    }
+
+    .no-pledge {
+        padding-bottom: 0;
+    }
+
+    .completed-inner {
+        margin: 0;
+        top: 20%;
+        padding: 1.5em;
+    }
+}
